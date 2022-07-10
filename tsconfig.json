@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}
+//Notes about configuration
+//  "target": "es5"==> meaning the typescript will compile into ES5 version of the JS
+// "lib": ["dom", "dom.iterable", "esnext"] => meaning the types provided by following libraries can be used as default
+//   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"] ==> Following files will be compiled by the TS compiler
+//  "exclude": ["node_modules"]==> following folder will not be compiled
