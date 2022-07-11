@@ -1,9 +1,9 @@
 import { FC } from "react";
-interface LoadingProps {
-  children: React.ReactNode;
-}
-const Layout: FC = ({ children }: LoadingProps) => {
-  return <div className='layout'>{children}</div>;
+type Props = {
+  children?: React.ReactNode | React.ReactNode[];
+};
+const Layout: FC<Props> = (props: Props) => {
+  return <div className='layout'>{props.children}</div>;
 };
 
 export default Layout;
