@@ -1,9 +1,22 @@
 import { AppProps } from "next/app";
 import { Layout } from "@components/common";
-function MyApp({ Component, pageProps }: AppProps) {
+import { FC } from "react";
+
+type Props = {
+  children?: React.ReactNode | React.ReactNode[];
+};
+
+const Noop: FC<Props> = ({ children }) => <>{children}</>;
+function MyApp({
+  Component,
+  pageProps,
+}: AppProps & { Component: { layout: FC<Props> } }) {
+  const Layout = Component.layout ?? Noop;
   return (
     <>
-      <Layout>{/* <Component {...pageProps} /> */}</Layout>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 }
