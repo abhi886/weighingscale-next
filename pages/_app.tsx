@@ -1,6 +1,7 @@
 import { AppProps } from "next/app";
 import { Layout } from "@components/common";
 import { FC } from "react";
+import "@assets/main.css";
 
 type Props = {
   children?: React.ReactNode | React.ReactNode[];
