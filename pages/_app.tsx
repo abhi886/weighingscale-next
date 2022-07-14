@@ -15,9 +15,9 @@ function MyApp({
   const Layout = Component.layout ?? Noop;
   return (
     <>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      {/* <Layout> */}
+      <Component {...pageProps} />
+      {/* </Layout> */}
     </>
   );
 }
