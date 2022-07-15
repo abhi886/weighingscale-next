@@ -40,7 +40,7 @@ export default function Home() {
               </div>
               {/* Date and Now Serving */}
               <div className='-mt-2'>
-                <p className='text-xs'>12.3.4.2022 </p>
+                <p className='text-xs'>12.3.4.2022 PM </p>
                 <input
                   type='text'
                   className='p-2 h-6 w-full flex-grow rounded-md focus:outline-none flex-shrink'
@@ -49,29 +49,27 @@ export default function Home() {
             </div>
             {/* Most Used Section */}
             <div className='grid grid-cols-3 gap-2 '>
-             
               <div className='grid col-span-2'>
-               
+                <p>Most Used Products</p>
               </div>
 
-                <div className='grid grid-cols-2 text-xs h-28 gap-1 place-items-center text-center pt-2'>
-                  <div className='bg-green-900 rounded-lg text-white w-full h-8'>
-                    Small Tub
-                  </div>
-                  <div className=''>All PLU</div>
-                  <div className='bg-green-900 rounded-lg text-white'>
-                    Medium Tub
-                  </div>
-                  <div className=''>Large Tub</div>
-                  <div className='bg-green-900 rounded-lg text-white'>
-                    SEARCH
-                  </div>
-                  <div>Top 20 Items</div>
-                  <div className='bg-green-900 rounded-lg text-white'>
-                    Product Info
-                  </div>
-                  <div>Date/Time</div>
-               
+              <div className='grid grid-cols-2 text-xs h-28 gap-1 place-items-center text-center pt-2'>
+                <div className='bg-green-900 rounded-lg text-white w-full h-8 px-2'>
+                  Small Tub
+                </div>
+                <div className=''>All PLU</div>
+                <div className='bg-green-900 rounded-lg text-white w-full h-8 px-2'>
+                  Medium Tub
+                </div>
+                <div className=''>Large Tub</div>
+                <div className='bg-green-900 rounded-lg text-white w-full h-8 px-2'>
+                  SEARCH
+                </div>
+                <div>Top 20 Items</div>
+                <div className='bg-green-900 rounded-lg text-white w-full h-8 px-2'>
+                  Product Info
+                </div>
+                <div>Date/Time</div>
               </div>
             </div>
             {/* bottom Section */}
