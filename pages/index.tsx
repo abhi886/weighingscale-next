@@ -1,79 +1,22 @@
 import { Layout } from "@components/common";
+import {
+  MonitorTopDisplay,
+  MonitorDisplayInput,
+  MonitorMostUsed,
+  MonitorBottomDisplay,
+} from "@components/monitor";
 export default function Home() {
   return (
     <div className='w-full   bg-gray-100 border-8 rounded-lg p-12'>
       <div className='sm:grid sm:grid-cols-3 sm:grid-rows-2 gap-x-2'>
-        {/* First Grid */}
+        {/* First Grid - Monitor Section*/}
         <div className='sm:col-span-2 border border-r-1 rounded-lg p-4 '>
           <div>Digi Logo | min - max whatever it is</div>
           <div className='w-full h-64 bg-gradient-to-r from-blue-400 to-blue-500 border-4 border-slate-400 p-2'>
-            {/* Top Section  */}
-            <div>
-              <div className='grid grid-cols-4'>
-                <div>
-                  <p className='text-xs'>TARE</p>
-                  <p className='text-xl text-bold text-white'>0.000</p>
-                </div>
-                <div>
-                  <p className='text-xs'>WEIGHT</p>
-                  <p className='text-xl text-bold text-white'>0.000</p>
-                </div>
-                <div>
-                  <p className='text-xs'>UNIT PRICE</p>
-                  <p className='text-xl text-bold text-white'>0.000</p>
-                </div>
-                <div>
-                  <p className='text-xs'>TOTAL PRICE</p>
-                  <p className='text-xl text-bold text-white'>0.000</p>
-                </div>
-              </div>
-            </div>
-            {/* Middle Section */}
-
-            <div className='grid grid-cols-3 gap-2 '>
-              {/* Text and PLU number */}
-              <div className='grid col-span-2 mt-2'>
-                <input
-                  type='text'
-                  className='p-2 h-6 w-full flex-grow rounded-md focus:outline-none flex-shrink'
-                ></input>
-              </div>
-              {/* Date and Now Serving */}
-              <div className='-mt-2'>
-                <p className='text-xs'>12.3.4.2022 PM </p>
-                <input
-                  type='text'
-                  className='p-2 h-6 w-full flex-grow rounded-md focus:outline-none flex-shrink'
-                ></input>{" "}
-              </div>
-            </div>
-            {/* Most Used Section */}
-            <div className='grid grid-cols-3 gap-2 '>
-              <div className='grid col-span-2'>
-                <p>Most Used Products</p>
-              </div>
-
-              <div className='grid grid-cols-2 text-xs h-28 gap-1 place-items-center text-center pt-2'>
-                <div className='bg-green-900 rounded-lg text-white w-full h-8 px-2'>
-                  Small Tub
-                </div>
-                <div className=''>All PLU</div>
-                <div className='bg-green-900 rounded-lg text-white w-full h-8 px-2'>
-                  Medium Tub
-                </div>
-                <div className=''>Large Tub</div>
-                <div className='bg-green-900 rounded-lg text-white w-full h-8 px-2'>
-                  SEARCH
-                </div>
-                <div>Top 20 Items</div>
-                <div className='bg-green-900 rounded-lg text-white w-full h-8 px-2'>
-                  Product Info
-                </div>
-                <div>Date/Time</div>
-              </div>
-            </div>
-            {/* bottom Section */}
-            <div>Bottom Section</div>
+            <MonitorTopDisplay></MonitorTopDisplay>
+            <MonitorDisplayInput></MonitorDisplayInput>
+            <MonitorMostUsed></MonitorMostUsed>
+            <MonitorBottomDisplay></MonitorBottomDisplay>
           </div>
         </div>
 
