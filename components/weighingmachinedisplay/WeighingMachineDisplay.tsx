@@ -5,6 +5,7 @@ import SaveNumberDisplay from "../savenumbersdisplay/SaveNumberDisplay";
 
 const WeighingMachineDisplay = () => {
   const [pluValue, setPluValue] = useState("");
+  const [productDisplayValue, setProductDisplayValue] = useState("");
   const handlePluChange = (e) => {
     setPluValue(e.target.value);
   };
@@ -23,6 +24,7 @@ const WeighingMachineDisplay = () => {
       <div className='sm:grid sm:grid-cols-3 sm:grid-rows-2 gap-x-2'>
         {/* First Grid - Monitor Section*/}
         <MonitorDisplay
+          productDisplayValue={productDisplayValue}
           pluValue={pluValue}
           handlePlu={handlePluChange}
         ></MonitorDisplay>

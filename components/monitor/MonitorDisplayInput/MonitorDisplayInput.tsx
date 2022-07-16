@@ -1,13 +1,22 @@
 import React, { useState } from "react";
 
-const MonitorDisplayInput = ({ pluValue, handlePlu }: any) => {
+const MonitorDisplayInput = ({
+  pluValue,
+  handlePlu,
+  productDisplayValue,
+}: any) => {
   return (
     <div className='grid grid-cols-3 gap-2 '>
       {/* Text and PLU number */}
       <div className='grid col-span-2 mt-2'>
         <input
           type='text'
-          className='p-2 h-6 w-full flex-grow rounded-md focus:outline-none flex-shrink'
+          className='p-2 h-6 w-full text-xs flex-grow rounded-md focus:outline-none flex-shrink'
+          value={productDisplayValue}
+          placeholder={"Enter Name of Product"}
+          onChange={() => {
+            console.log("called On change");
+          }}
         ></input>
       </div>
       {/* Date and Now Serving */}
