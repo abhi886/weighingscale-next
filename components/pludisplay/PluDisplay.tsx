@@ -25,12 +25,16 @@ const pluNumbersList = [
   "AUTO",
   "@",
 ];
-const PluDisplay = () => {
+const PluDisplay = ({ handlePluChange }: any) => {
   return (
     <div className='border border-r-1 rounded-lg p-4'>
       <div className='grid grid-cols-4 grid-row-6 gap-1'>
         {pluNumbersList.map((pl) => (
-          <PluNumberCard key={pl} value={pl}></PluNumberCard>
+          <PluNumberCard
+            key={pl}
+            value={pl}
+            handlePluChange={handlePluChange}
+          ></PluNumberCard>
         ))}
       </div>
     </div>
