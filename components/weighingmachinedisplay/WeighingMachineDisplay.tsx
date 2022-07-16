@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import MonitorDisplay from "@components/monitordisplay/MonitorDisplay";
 import PluDisplay from "@components/pludisplay/PluDisplay";
 import SaveNumberDisplay from "../savenumbersdisplay/SaveNumberDisplay";
+const productNameWithPlu = [
+  { name: "RSPCA chicken Breast Approved", PLU: "258" },
+];
 
 const WeighingMachineDisplay = () => {
   const [pluValue, setPluValue] = useState("");
@@ -15,7 +18,16 @@ const WeighingMachineDisplay = () => {
     }
     if (isNaN(value)) {
       if (value === "PLU") {
-        console.log("Change State for Display product");
+        const data = productNameWithPlu;
+        const productName = productNameWithPlu.filter(
+          (p) => p.PLU === pluValue
+        );
+        productName &&
+          productName.length > 0 &&
+          setProductDisplayValue(productName[0].name);
+        if (!productName || productName.length === 0) {
+          alert("Invalid Plu.");
+        }
       }
     }
   };

@@ -15,7 +15,7 @@ const MonitorDisplayInput = ({
           value={productDisplayValue}
           placeholder={"Enter Name of Product"}
           onChange={() => {
-            console.log("called On change");
+            alert("Typing Not allowed");
           }}
         ></input>
       </div>
