@@ -9,6 +9,7 @@ const productNameWithPlu = [
 const WeighingMachineDisplay = () => {
   const [pluValue, setPluValue] = useState("");
   const [productDisplayValue, setProductDisplayValue] = useState("");
+  const [power, SetPower] = useState(false);
   const handlePluChange = (e) => {
     setPluValue(e.target.value);
   };
@@ -29,6 +30,9 @@ const WeighingMachineDisplay = () => {
           alert("Invalid Plu.");
         }
       }
+      if (value === "p") {
+        SetPower(!power);
+      }
     }
   };
   return (
@@ -36,6 +40,7 @@ const WeighingMachineDisplay = () => {
       <div className='sm:grid sm:grid-cols-3 sm:grid-rows-2 gap-x-2'>
         {/* First Grid - Monitor Section*/}
         <MonitorDisplay
+          power={power}
           productDisplayValue={productDisplayValue}
           pluValue={pluValue}
           handlePlu={handlePluChange}
