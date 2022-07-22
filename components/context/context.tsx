@@ -19,7 +19,9 @@ type State = {
   power: boolean;
 };
 
-type Action = { type: "change-PLU-from-user-keyboard"; payload: any };
+type Action =
+  | { type: "change-PLU-from-user-keyboard"; payload: any }
+  | { type: "change-PLU-from-screen-keyboard"; payload: any };
 
 const initialState: State = {
   pluValue: "",
@@ -31,6 +33,8 @@ const reducer = (state: State, action: Action): State => {
   switch (action.type) {
     case "change-PLU-from-user-keyboard":
       return { ...state, ["pluValue"]: action.payload.value };
+    case "change-PLU-from-screen-keyboard":
+      return { ...state, ["pluValue"]: state.pluValue + action.payload.value };
     default:
       return initialState;
   }
@@ -44,8 +48,17 @@ export const UIContextProvider: FC<Props> = ({ children }) => {
       payload: { value: e.target.value },
     });
 
+  const changePluFromScreenKeyboard = (value) => {
+    if (!isNaN(value)) {
+      dispatch({
+        type: "change-PLU-from-screen-keyboard",
+        payload: { value },
+      });
+    }
+  };
+
   const contextValue = useMemo(() => {
-    return { ...state, changePluFromUserKeyboard };
+    return { ...state, changePluFromUserKeyboard, changePluFromScreenKeyboard };
   }, [state]);
   return (
     <UIContext.Provider value={contextValue}>{children}</UIContext.Provider>
