@@ -7,48 +7,41 @@ const productNameWithPlu = [
 ];
 
 const WeighingMachineDisplay = () => {
-  const [pluValue, setPluValue] = useState("");
-  const [productDisplayValue, setProductDisplayValue] = useState("");
-  const [power, SetPower] = useState(false);
-  const handlePluChange = (e) => {
-    setPluValue(e.target.value);
-  };
-  const handlePluChangeFromPluDisplaySection = (value) => {
-    if (!isNaN(value)) {
-      setPluValue(pluValue + value);
-    }
-    if (isNaN(value)) {
-      if (value === "PLU") {
-        const data = productNameWithPlu;
-        const productName = productNameWithPlu.filter(
-          (p) => p.PLU === pluValue
-        );
-        productName &&
-          productName.length > 0 &&
-          setProductDisplayValue(productName[0].name);
-        if (!productName || productName.length === 0) {
-          alert("Invalid Plu.");
-        }
-      }
-      if (value === "p") {
-        SetPower(!power);
-      }
-    }
-  };
+  // const [pluValue, setPluValue] = useState("");
+  // const [productDisplayValue, setProductDisplayValue] = useState("");
+  // const [power, SetPower] = useState(false);
+  // const handlePluChange = (e) => {
+  //   setPluValue(e.target.value);
+  // };
+  // const handlePluChangeFromPluDisplaySection = (value) => {
+  //   if (!isNaN(value)) {
+  //     setPluValue(pluValue + value);
+  //   }
+  //   if (isNaN(value)) {
+  //     if (value === "PLU") {
+  //       const data = productNameWithPlu;
+  //       const productName = productNameWithPlu.filter(
+  //         (p) => p.PLU === pluValue
+  //       );
+  //       productName &&
+  //         productName.length > 0 &&
+  //         setProductDisplayValue(productName[0].name);
+  //       if (!productName || productName.length === 0) {
+  //         alert("Invalid Plu.");
+  //       }
+  //     }
+  //     if (value === "p") {
+  //       SetPower(!power);
+  //     }
+  //   }
+  // };
   return (
     <div className='w-full bg-gray-100 border-8 rounded-lg p-12'>
       <div className='sm:grid sm:grid-cols-3 sm:grid-rows-2 gap-x-2'>
         {/* First Grid - Monitor Section*/}
-        <MonitorDisplay
-          power={power}
-          productDisplayValue={productDisplayValue}
-          pluValue={pluValue}
-          handlePlu={handlePluChange}
-        ></MonitorDisplay>
+        <MonitorDisplay></MonitorDisplay>
         {/* Second Grid - PLU Number Section*/}
-        <PluDisplay
-          handlePluChange={handlePluChangeFromPluDisplaySection}
-        ></PluDisplay>
+        <PluDisplay></PluDisplay>
         {/* Last Grid - SaveNumber Section */}
         <SaveNumberDisplay></SaveNumberDisplay>
       </div>

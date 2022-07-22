@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { useUI } from "@components/context/context";
 
-const MonitorDisplayInput = ({
-  pluValue,
-  handlePlu,
-  productDisplayValue,
-}: any) => {
+const MonitorDisplayInput = ({}: any) => {
+  const { changePluFromUserKeyboard, pluValue, productDisplayValue }: any =
+    useUI();
+  console.log(useUI());
   return (
     <div className='grid grid-cols-3 gap-2 '>
       {/* Text and PLU number */}
@@ -27,7 +27,9 @@ const MonitorDisplayInput = ({
           className='p-2 h-6 w-full text-xs flex-grow rounded-md focus:outline-none flex-shrink'
           value={pluValue}
           placeholder={"Now Serving"}
-          onChange={handlePlu}
+          onChange={(e) => {
+            changePluFromUserKeyboard(e);
+          }}
         ></input>{" "}
       </div>
     </div>
