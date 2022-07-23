@@ -2,6 +2,7 @@ import { AppProps } from "next/app";
 import { Layout } from "@components/common";
 import { FC } from "react";
 import "@assets/main.css";
+import PluContextProvider from "@components/context/PluContextProvider";
 
 type Props = {
   children?: React.ReactNode | React.ReactNode[];
@@ -16,8 +17,10 @@ function MyApp({
   return (
     <>
       {/* <Layout> */}
-      <Component {...pageProps} />
-      {/* </Layout> */}
+      <PluContextProvider>
+        <Component {...pageProps} />
+        {/* </Layout> */}
+      </PluContextProvider>
     </>
   );
 }
