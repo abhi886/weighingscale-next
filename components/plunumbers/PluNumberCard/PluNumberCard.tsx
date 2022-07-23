@@ -1,5 +1,5 @@
 import React from "react";
-import { useUI } from "@components/context/context";
+import { useUI } from "@components/context/PluContextProvider";
 
 const PluNumberCard = ({ value }: any) => {
   const { changePluFromScreenKeyboard }: any = useUI();
