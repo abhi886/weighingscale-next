@@ -16,10 +16,10 @@ const PLUContext = createContext<object>({});
 
 export const PluContextProvider: FC<Props> = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const changePluFromUserKeyboard = (e) =>
+  const changePluFromUserKeyboard = (value) =>
     dispatch({
       type: ACTIONS.SET_PLU,
-      payload: { value: e.target.value },
+      payload: { value },
     });
 
   const changePluFromScreenKeyboard = (value) => {
@@ -61,7 +61,7 @@ export const PluContextProvider: FC<Props> = ({ children }) => {
 
   const contextValue = useMemo(() => {
     return { ...state, changePluFromUserKeyboard, changePluFromScreenKeyboard };
-  }, [state]);
+  }, [state.pluValue]);
   return (
     <PLUContext.Provider value={contextValue}>{children}</PLUContext.Provider>
   );
