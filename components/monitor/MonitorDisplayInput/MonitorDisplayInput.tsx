@@ -1,10 +1,13 @@
 import React, { useState, useContext } from "react";
 import { useUI } from "@components/context/PluContextProvider";
+import { useRenders } from "@components/customHooks/useRenders";
 
-const MonitorDisplayInput = ({}: any) => {
+const MonitorDisplayInput = () => {
   const { changePluFromUserKeyboard, pluValue, productDisplayValue }: any =
     useUI();
   console.log(useUI());
+  useRenders("Monitor Display Input");
+
   return (
     <div className='grid grid-cols-3 gap-2 '>
       {/* Text and PLU number */}
@@ -28,7 +31,7 @@ const MonitorDisplayInput = ({}: any) => {
           value={pluValue}
           placeholder={"Now Serving"}
           onChange={(e) => {
-            changePluFromUserKeyboard(e);
+            changePluFromUserKeyboard(e.target.value);
           }}
         ></input>{" "}
       </div>
