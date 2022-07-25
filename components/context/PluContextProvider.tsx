@@ -61,7 +61,7 @@ export const PluContextProvider: FC<Props> = ({ children }) => {
 
   const contextValue = useMemo(() => {
     return { ...state, changePluFromUserKeyboard, changePluFromScreenKeyboard };
-  }, [state.pluValue]);
+  }, [state]);
   return (
     <PLUContext.Provider value={contextValue}>{children}</PLUContext.Provider>
   );
