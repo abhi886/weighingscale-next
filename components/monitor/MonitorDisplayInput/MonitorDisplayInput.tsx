@@ -9,9 +9,9 @@ const MonitorDisplayInput = () => {
   useRenders("Monitor Display Input");
 
   return (
-    <div className='grid grid-cols-3 gap-2 '>
+    <div className='grid grid-cols-2 md:grid-cols-3 gap-2 '>
       {/* Text and PLU number */}
-      <div className='grid col-span-2 mt-2'>
+      <div className='grid md:col-span-2 mt-2'>
         <input
           type='text'
           className='p-2 h-6 w-full text-xs flex-grow rounded-md focus:outline-none flex-shrink'
