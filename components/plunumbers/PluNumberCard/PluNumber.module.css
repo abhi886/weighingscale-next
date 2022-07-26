@@ -1,0 +1,9 @@
+.root {
+  @apply bg-black text-white  text-center justify-center rounded-lg;
+}
+.rowSpan2 {
+  @apply row-span-2;
+}
+.paddingDiv {
+  @apply pt-4 text-2xl;
+}
