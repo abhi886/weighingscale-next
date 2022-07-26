@@ -17,6 +17,9 @@ module.exports = {
         primary: "var(--text-primary)",
         secondary: "var(--text-secondary)",
       },
+      fontSize: {
+        xxs: ".6rem",
+      },
     },
   },
   plugins: [],
