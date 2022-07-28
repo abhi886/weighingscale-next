@@ -57,6 +57,16 @@ export const PluContextProvider: FC<Props> = ({ children }) => {
         });
       }
     }
+    if (value === "C") {
+      dispatch({
+        type: ACTIONS.SET_PRODUCT_DISPLAY_VALUE,
+        payload: "",
+      });
+      dispatch({
+        type: ACTIONS.SET_PLU,
+        payload: { value: "" },
+      });
+    }
   };
   const contextValue = {
     ...state,
