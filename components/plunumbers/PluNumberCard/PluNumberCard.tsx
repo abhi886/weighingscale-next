@@ -13,7 +13,13 @@ const PluNumberCard = ({ value }: any) => {
       className={rootClassname}
       onClick={() => changePluFromScreenKeyboard(value)}
     >
-      <div className={value === "*" ? s.paddingDiv : ""}> {value}</div>
+      <div
+        data-testid='plu-number-card'
+        className={value === "*" ? s.paddingDiv : ""}
+      >
+        {""}
+        {value}
+      </div>
     </div>
   );
 };
