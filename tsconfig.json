@@ -20,7 +20,7 @@
       "@assets/*": ["assets/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "postcss.config.tjs"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "postcss.config.tjs", "__tests__/MonitorDisplayInput.test.jsx"],
   "exclude": ["node_modules"]
 }
 //Notes about configuration
