@@ -15,6 +15,7 @@ const MonitorDisplayInput = () => {
         {/* Text and PLU number */}
         <div className='grid md:col-span-2'>
           <input
+             data-testid='product-label'
             type='text'
             className='p-2 h-6 w-full text-xs flex-grow rounded-md focus:outline-none flex-shrink'
             value={productDisplayValue}
