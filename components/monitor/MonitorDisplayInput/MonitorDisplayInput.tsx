@@ -1,6 +1,8 @@
 import React, { useState, useContext } from "react";
 import { useUI } from "@components/context/PluContextProvider";
 import { useRenders } from "@components/customHooks/useRenders";
+import { date } from "../../utils/date";
+import DateTime from "../DateTime/DateTime";
 
 const MonitorDisplayInput = () => {
   const { changePluFromUserKeyboard, pluValue, productDisplayValue }: any =
@@ -10,12 +12,12 @@ const MonitorDisplayInput = () => {
 
   return (
     <>
-      <div className='text-xs flex flex-col items-end h-4'>12.3.4.2022 PM </div>
+      <DateTime />
       <div className='grid grid-cols-2 md:grid-cols-3 gap-2 '>
         {/* Text and PLU number */}
         <div className='grid md:col-span-2'>
           <input
-             data-testid='product-label'
+            data-testid='product-label'
             type='text'
             className='p-2 h-6 w-full text-xs flex-grow rounded-md focus:outline-none flex-shrink'
             value={productDisplayValue}
