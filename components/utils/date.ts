@@ -1,4 +1,11 @@
-export function date() {
+interface DateReturnType {
+  year: number;
+  month: number;
+  day: number;
+  time: string;
+}
+
+export function date(): DateReturnType {
   const date = new Date();
   return {
     year: date.getFullYear(),
