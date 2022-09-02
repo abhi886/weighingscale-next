@@ -17,7 +17,10 @@ function DateTime() {
   });
   const { year, month, day, time } = dateDetails;
   return (
-    <div className='text-xxs flex justify-end '>{`${year}-${month}-${day} | ${time} `}</div>
+    <div
+      data-testid='date-element'
+      className='text-xxs flex justify-end '
+    >{`${year}-${month}-${day} | ${time} `}</div>
   );
 }
 
