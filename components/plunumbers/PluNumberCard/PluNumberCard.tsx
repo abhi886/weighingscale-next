@@ -7,6 +7,7 @@ const PluNumberCard = ({ value }: any) => {
   const { changePluFromScreenKeyboard }: any = useUI();
   const rootClassname = cn(s.root, {
     [s.rowSpan2]: value === "*",
+    [s.blueBorder]: value === "U" || value === "PLU" || value === "AUTO",
   });
   return (
     <div
